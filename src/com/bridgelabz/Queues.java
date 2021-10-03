@@ -16,7 +16,7 @@ public class Queues {
         this.front = null;
         this.rear = null;
     }
-
+    // UC3 Ability to create Queue of 56,30 and 70.
     public void enQueue(int data) {
         Node newNode = new Node(data);
         if (this.rear == null) {
@@ -37,6 +37,17 @@ public class Queues {
             temp = temp.next;
         }
         return count;
+    }
+
+    // UC4 Ability to dequeue from the begining.
+    public int deQueue() {
+        if (this.front == null) {
+            System.out.println("Empty Queue.");
+            return -1;
+        }
+        Node temp = this.front;
+        this.front = this.front.next;
+        return temp.data;
     }
 
     public void display() {
